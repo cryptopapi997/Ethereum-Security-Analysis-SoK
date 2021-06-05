@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.1.17)  2 MAY 2021 15:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.1.17)  5 JUN 2021 14:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -721,38 +721,48 @@ File: l3backend-pdfmode.def 2020-06-29 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count288
 \l__pdf_internal_box=\box58
 )
-(./0-Paper.aux)
+(./0-Paper.aux
+
+LaTeX Warning: Label `fig:oyente' multiply defined.
+
+
+LaTeX Warning: Label `fig:oyente' multiply defined.
+
+
+LaTeX Warning: Label `fig:oyente' multiply defined.
+
+)
 \openout1 = `0-Paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 33.
 LaTeX Font Info:    Trying to load font information for OMS+pzccm on input line
- 34.
+ 33.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspzccm.fd
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Info: Redefining \microtypecontext on input line 34.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Info: Redefining \microtypecontext on input line 33.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 34.
+LaTeX Info: Redefining \showhyphens on input line 33.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: Adjustment of interword spacing enabled.
 Package microtype Info: Using default spacing set `basictext'.
@@ -791,7 +801,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box60
-Package hyperref Info: Link coloring ON on input line 34.
+Package hyperref Info: Link coloring ON on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -804,9 +814,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count295
 )
-LaTeX Info: Redefining \ref on input line 34.
-LaTeX Info: Redefining \pageref on input line 34.
-LaTeX Info: Redefining \nameref on input line 34.
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
 
 (./0-Paper.out) (./0-Paper.out)
 \@outlinefile=\write4
@@ -814,7 +824,7 @@ LaTeX Info: Redefining \nameref on input line 34.
 
  ABD: EveryShipout initializing macros
 LaTeX Font Info:    Trying to load font information for OT1+ptmcm on input line
- 49.
+ 48.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptmcm.fd
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
@@ -824,23 +834,23 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+ptmcm on input line
- 49.
+ 48.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptmcm.fd
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+psycm on input line
- 49.
+ 48.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxpsycm.fd
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
@@ -848,66 +858,279 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 9
+6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
+Overfull \hbox (29.45854pt too wide) in paragraph at lines 102--103
+[][][]\T1/pcr/m/n/10 <receivingAddress>.call().gas().value(amount) 
+ []
 
-LaTeX Warning: Citation `arpachiDusseau18:osbook' on page 1 undefined on input 
-line 89.
-
-
-LaTeX Warning: Citation `waldspurger02' on page 1 undefined on input line 91.
-
-
-LaTeX Warning: Citation `waldspurger02' on page 1 undefined on input line 101.
-
-
-LaTeX Warning: Citation `arpachiDusseau18:osbook' on page 1 undefined on input 
-line 101.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+[2]
+Underfull \hbox (badness 1048) in paragraph at lines 108--109
+[]\T1/ptm/m/n/10 (+20) Smart con-tracts have the op-tion of defin-ing a so-
+ []
 
 
-]
+Underfull \hbox (badness 1688) in paragraph at lines 108--109
+\T1/ptm/m/n/10 (+20) fect to re-ceiv-ing Ether, this func-tion is also ex-e-
+ []
+
+[3]
+<oyente.png, id=148, 705.63625pt x 302.12875pt>
+File: oyente.png Graphic file (type png)
+<use oyente.png>
+Package pdftex.def Info: oyente.png  used on input line 205.
+(pdftex.def)             Requested size: 246.97638pt x 105.74664pt.
+
+Overfull \hbox (5.956pt too wide) in paragraph at lines 205--206
+ [] 
+ []
+
+[4 <./oyente.png (PNG copy)>]
+<Fstar.png, id=158, 1115.16624pt x 705.63625pt>
+File: Fstar.png Graphic file (type png)
+<use Fstar.png>
+Package pdftex.def Info: Fstar.png  used on input line 230.
+(pdftex.def)             Requested size: 223.0293pt x 141.12474pt.
+
+Underfull \vbox (badness 4886) has occurred while \output is active []
+
+ [5 <./Fstar.png (PNG copy)>]
+<Slither.png, id=165, 1451.4225pt x 466.74374pt>
+File: Slither.png Graphic file (type png)
+<use Slither.png>
+Package pdftex.def Info: Slither.png  used on input line 252.
+(pdftex.def)             Requested size: 217.70398pt x 70.00853pt.
+<MAIAN.png, id=166, 1154.3125pt x 476.78125pt>
+File: MAIAN.png Graphic file (type png)
+<use MAIAN.png>
+Package pdftex.def Info: MAIAN.png  used on input line 273.
+(pdftex.def)             Requested size: 230.85841pt x 95.35455pt.
+ [6 <./slither.png (PNG copy)> <./MAIAN.png (PNG copy)>]
+Underfull \hbox (badness 1803) in paragraph at lines 291--292
+\T1/ptm/m/n/10 (+20) how-ever, can never de-tect ev-ery pos-si-ble flaw, and, i
+n
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
+
+ []
+
+<echidna.png, id=172, 1467.4825pt x 386.44376pt>
+File: echidna.png Graphic file (type png)
+<use echidna.png>
+Package pdftex.def Info: echidna.png  used on input line 302.
+(pdftex.def)             Requested size: 234.802pt x 61.83226pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+\T1/ptm/m/n/10 (+20) https://www4.comp.polyu.edu.hk/ csxluo/Gasper.pdf
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+\T1/ptm/m/n/10 (+20) https://www.mdpi.com/2227-7080/7/1/6/htm
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+\T1/ptm/m/n/10 (+20) https://loiluu.com/papers/oyente.pdf
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+
+Overfull \hbox (13.60191pt too wide) in paragraph at lines 324--368
+\T1/ptm/m/n/10 (-20) https://drops.dagstuhl.de/opus/volltexte/2020/13015/pdf/OA
+SIcs-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+\T1/ptm/m/n/10 (+20) SLATE-2020-2.pdf
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+
+Overfull \hbox (233.27734pt too wide) in paragraph at lines 324--368
+[][]\T1/pcr/m/n/10 http://pages.cpsc.ucalgary.ca/~joel.reardon/blockchain/readi
+ngs/ndss2018_09-1_Kalra_paper.pdf
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+[]\T1/ptm/m/n/10 (+20) https://arxiv.org/pdf/1806.01143.pdf
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+\T1/ptm/m/n/10 (+20) https://github.com/federicobond/solcheck
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+\T1/ptm/m/n/10 (+20) https://github.com/SilentCicero/solint
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+\T1/ptm/m/n/10 (+20) https://www.mdpi.com/2227-7080/7/1/6/htm
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+\T1/ptm/m/n/10 (+20) https://hal.inria.fr/hal-01400469/document
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+
+Overfull \hbox (126.17786pt too wide) in paragraph at lines 324--368
+[][]\T1/pcr/m/n/10 https://ts.data61.csiro.au/publications/csiro_full_text/Aman
+i_BBS_18.pdf
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+[]\T1/ptm/m/n/10 (+20) https://dl.acm.org/doi/pdf/10.1145/3381036
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+\T1/ptm/m/n/10 (+20) https://link.springer.com/content/pdf/10.1007
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+\T1/ptm/m/n/10 (+20) https://arxiv.org/pdf/1908.09878.pdf
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+\T1/ptm/m/n/10 (+20) https://arxiv.org/pdf/1807.03932.pdf
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--368
+
+ []
+
+[7 <./Echidna.png (PNG copy)>]
 No file 0-Paper.bbl.
-[2
+[8
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 201.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 201.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 375.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 375.
  (./0-Paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 201.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 201.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 375.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 375.
 Package rerunfilecheck Info: File `0-Paper.out' has not changed.
-(rerunfilecheck)             Checksum: AA0549A68990737E0ABD1E34F54D5255;249.
+(rerunfilecheck)             Checksum: 3666C9A3C1D0B07C4F1648EFFD124444;1880.
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 201.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 375.
  ) 
 Here is how much of TeX's memory you used:
- 18630 strings out of 480906
- 350497 string characters out of 5910772
- 623983 words of memory out of 5000000
- 33748 multiletter control sequences out of 15000+600000
- 589462 words of font info for 150 fonts, out of 8000000 for 9000
+ 18778 strings out of 480906
+ 351222 string characters out of 5910772
+ 627789 words of memory out of 5000000
+ 33743 multiletter control sequences out of 15000+600000
+ 598330 words of font info for 227 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,10n,60p,447b,741s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,9n,60p,1650b,401s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
-/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 0-Paper.pdf (2 pages, 64006 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on 0-Paper.pdf (8 pages, 751260 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 38445 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 219 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 39166 words of extra memory for PDF output out of 42996 (max. 10000000)
 
