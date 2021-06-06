@@ -1,0 +1,190 @@
+\begin{thebibliography}{10}
+
+\bibitem{nakamoto}
+S.~Nakamoto, ``Bitcoin: A peer-to-peer electronic cash system,''
+
+\bibitem{szabo_1996}
+N.~Szabo, ``Smart contracts: Building blocks for digital markets,'' {\em
+  Extropy}, no.~16, 1996.
+
+\bibitem{bhandari_2018}
+B.~Bhandari, ``Supply chain management, blockchains and smart contracts,'' {\em
+  SSRN Electronic Journal}, 2018.
+
+\bibitem{giannakaris_trakadas_zahariadis_gkonis_papadopoulos_2019}
+P.~Giannakaris, P.~Trakadas, T.~Zahariadis, P.~Gkonis, and K.~Papadopoulos,
+  ``Using smart contracts in smart energy grid applications,'' {\em Proceedings
+  of the International Scientific Conference - Sinteza 2019}, 2019.
+
+\bibitem{griggs_ossipova_kohlios_baccarini_howson_hayajneh_2018}
+K.~N. Griggs, O.~Ossipova, C.~P. Kohlios, A.~N. Baccarini, E.~A. Howson, and
+  T.~Hayajneh, ``Healthcare blockchain system using smart contracts for secure
+  automated remote patient monitoring,'' {\em Journal of Medical Systems},
+  vol.~42, no.~7, 2018.
+
+\bibitem{nr1}
+``Nr 1 contract by balance,'' 2021.
+
+\bibitem{nr2}
+``Nr 2 contract by balance,'' 2021.
+
+\bibitem{nr1T}
+``Uniswap contract,'' 2021.
+
+\bibitem{nr2T}
+``Chainlink contract,'' 2021.
+
+\bibitem{atzei_bartoletti_cimoli_2017}
+N.~Atzei, M.~Bartoletti, and T.~Cimoli, ``A survey of attacks on ethereum smart
+  contracts (sok),'' p.~164–186, 2017.
+
+\bibitem{wood_2021}
+G.~Wood, ``Ethereum: A secure decentralised generalised transaction ledger,''
+  p.~1–39, May 2021.
+
+\bibitem{gebele_2020}
+J.~Gebele, ``Analysis of the solidity compiler for smart contract redundancy
+  detection,'' p.~1–57, May 2020.
+
+\bibitem{ethereumrevision0bbfe453}
+E.~R. 0bbfe453, ``Solidity security considerations,'' {\em Solidity
+  Documentation}.
+
+\bibitem{moura_bjorner_2008}
+L.~D. Moura and N.~Bjørner, ``Z3: An efficient smt solver,'' {\em Tools and
+  Algorithms for the Construction and Analysis of Systems Lecture Notes in
+  Computer Science}, p.~337–340, 2008.
+
+\bibitem{osterland_rose_2020}
+T.~Osterland and T.~Rose, ``Model checking smart contracts for ethereum,'' {\em
+  Pervasive and Mobile Computing}, vol.~63, p.~101129, 2020.
+
+\bibitem{luu_chu_olickel_saxena_hobor_2016}
+L.~Luu, D.-H. Chu, H.~Olickel, P.~Saxena, and A.~Hobor, ``Making smart
+  contracts smarter,'' {\em Proceedings of the 2016 ACM SIGSAC Conference on
+  Computer and Communications Security}, Oct 2016.
+
+\bibitem{zhou_hua_pi_sun_nomura_yamashita_kurihara_2018}
+E.~Zhou, S.~Hua, B.~Pi, J.~Sun, Y.~Nomura, K.~Yamashita, and H.~Kurihara,
+  ``Security assurance for smart contract,'' {\em 2018 9th IFIP International
+  Conference on New Technologies, Mobility and Security (NTMS)}, 2018.
+
+\bibitem{albert_gordillo_livshits_rubio_sergey_2018}
+E.~Albert, P.~Gordillo, B.~Livshits, A.~Rubio, and I.~Sergey, ``Ethir: A
+  framework for high-level analysis of ethereum bytecode,'' {\em Automated
+  Technology for Verification and Analysis Lecture Notes in Computer Science},
+  p.~513–520, 2018.
+
+\bibitem{chen_li_luo_zhang_2017}
+T.~Chen, X.~Li, X.~Luo, and X.~Zhang, ``Under-optimized smart contracts devour
+  your money,'' {\em 2017 IEEE 24th International Conference on Software
+  Analysis, Evolution and Reengineering (SANER)}, 2017.
+
+\bibitem{mueller}
+B.~Mueller, ``Smashing smart contracts for fun and real profit,''
+
+\bibitem{mueller_luca_2019}
+B.~Mueller and D.~Luca, ``Advances in automated evm smart contract
+  vulnerability detection and exploitation,'' {\em Def CON 27}, p.~1–17, Aug
+  2019.
+
+\bibitem{mossberg_manzano_hennenfent_groce_grieco_feist_brunson_dinaburg_2019}
+M.~Mossberg, F.~Manzano, E.~Hennenfent, A.~Groce, G.~Grieco, J.~Feist,
+  T.~Brunson, and A.~Dinaburg, ``Manticore: A user-friendly symbolic execution
+  framework for binaries and smart contracts,'' {\em 2019 34th IEEE/ACM
+  International Conference on Automated Software Engineering (ASE)}, 2019.
+
+\bibitem{kalra_goel_dhawan_sharma_2018}
+S.~Kalra, S.~Goel, M.~Dhawan, and S.~Sharma, ``Zeus: Analyzing safety of smart
+  contracts,'' {\em Proceedings 2018 Network and Distributed System Security
+  Symposium}, 2018.
+
+\bibitem{lattner_adve}
+C.~Lattner and V.~Adve, ``Llvm: A compilation framework for lifelong program
+  analysis and transformation,'' {\em International Symposium on Code
+  Generation and Optimization, 2004. CGO 2004.}
+
+\bibitem{gurfinkel_kahsai_komuravelli_navas_2015}
+A.~Gurfinkel, T.~Kahsai, A.~Komuravelli, and J.~A. Navas, ``The seahorn
+  verification framework,'' {\em Computer Aided Verification Lecture Notes in
+  Computer Science}, p.~343–361, 2015.
+
+\bibitem{tsankov_dan_drachsler-cohen_gervais_bünzli_vechev_2018}
+P.~Tsankov, A.~Dan, D.~Drachsler-Cohen, A.~Gervais, F.~Bünzli, and M.~Vechev,
+  ``Securify,'' {\em Proceedings of the 2018 ACM SIGSAC Conference on Computer
+  and Communications Security}, 2018.
+
+\bibitem{bhargavan_delignat-lavaud_fournet_gollamudi_gonthier_kobeissi_kulatova_rastogi_sibut-pinote_swamy_etal._2016}
+K.~Bhargavan, A.~Delignat-Lavaud, C.~Fournet, A.~Gollamudi, G.~Gonthier,
+  N.~Kobeissi, N.~Kulatova, A.~Rastogi, T.~Sibut-Pinote, N.~Swamy, and et~al.,
+  ``Formal verification of smart contracts,'' {\em Proceedings of the 2016 ACM
+  Workshop on Programming Languages and Analysis for Security}, 2016.
+
+\bibitem{amani_bégel_bortin_staples_2018}
+S.~Amani, M.~Bégel, M.~Bortin, and M.~Staples, ``Towards verifying ethereum
+  smart contract bytecode in isabelle/hol,'' {\em Proceedings of the 7th ACM
+  SIGPLAN International Conference on Certified Programs and Proofs}, 2018.
+
+\bibitem{nikolic_kolluri_sergey_saxena_hobor_2018}
+I.~Nikolić, A.~Kolluri, I.~Sergey, P.~Saxena, and A.~Hobor, ``Finding the
+  greedy, prodigal, and suicidal contracts at scale,'' {\em Proceedings of the
+  34th Annual Computer Security Applications Conference}, 2018.
+
+\bibitem{feist_grieco_groce_2019}
+J.~Feist, G.~Grieco, and A.~Groce, ``Slither: A static analysis framework for
+  smart contracts,'' {\em 2019 IEEE/ACM 2nd International Workshop on Emerging
+  Trends in Software Engineering for Blockchain (WETSEB)}, 2019.
+
+\bibitem{chen_zhu_li_chen_li_luo_lin_zhange_2018}
+T.~Chen, Y.~Zhu, Z.~Li, J.~Chen, X.~Li, X.~Luo, X.~Lin, and X.~Zhange,
+  ``Understanding ethereum via graph analysis,'' {\em IEEE INFOCOM 2018 - IEEE
+  Conference on Computer Communications}, 2018.
+
+\bibitem{honig_everts_huisman_2019}
+J.~J. Honig, M.~H. Everts, and M.~Huisman, ``Practical mutation testing for
+  smart contracts,'' {\em Lecture Notes in Computer Science Data Privacy
+  Management, Cryptocurrencies and Blockchain Technology}, p.~289–303, 2019.
+
+\bibitem{grieco_song_cygan_feist_groce_2020}
+G.~Grieco, W.~Song, A.~Cygan, J.~Feist, and A.~Groce, ``Echidna: effective,
+  usable, and fast fuzzing for smart contracts,'' {\em Proceedings of the 29th
+  ACM SIGSOFT International Symposium on Software Testing and Analysis}, 2020.
+
+\bibitem{claessen_hughes_2000}
+K.~Claessen and J.~Hughes, ``Quickcheck,'' {\em Proceedings of the fifth ACM
+  SIGPLAN international conference on Functional programming - ICFP 00}, 2000.
+
+\bibitem{SWC}
+``Smart contract weakness classification and test cases,'' 2021.
+
+\bibitem{7965268}
+M.~Coblenz, ``Obsidian: A safer blockchain programming language,'' in {\em 2017
+  IEEE/ACM 39th International Conference on Software Engineering Companion
+  (ICSE-C)}, pp.~97--99, 2017.
+
+\bibitem{9223278}
+M.~Kaleem, A.~Mavridou, and A.~Laszka, ``Vyper: A security comparison with
+  solidity based on common vulnerabilities,'' in {\em 2020 2nd Conference on
+  Blockchain Research Applications for Innovative Networks and Services
+  (BRAINS)}, pp.~107--111, 2020.
+
+\bibitem{hegedűs_2019}
+P.~Hegedűs, ``Towards analyzing the complexity landscape of solidity based
+  ethereum smart contracts,'' {\em Technologies}, vol.~7, no.~1, p.~6, 2019.
+
+\bibitem{slither}
+Commit-4b55839, ``Slither source,'' in {\em https://github.com/crytic/slither}.
+
+\bibitem{oyente}
+Commit-69dc0a9, ``Oyente source,'' in {\em
+  https://github.com/enzymefinance/oyente}.
+
+\bibitem{securify}
+Commit-71c22dd, ``Securify2 source,'' in {\em
+  https://github.com/eth-sri/securify2}.
+
+\bibitem{mythril}
+Commmit-9b0c6d1, ``Mythril source,'' in {\em
+  https://github.com/ConsenSys/mythril}.
+
+\end{thebibliography}

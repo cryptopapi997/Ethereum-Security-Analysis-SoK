@@ -5,29 +5,6 @@
 \usepackage{tikz}
 \usepackage{amsmath}
 
-% inlined bib file
-\usepackage{filecontents}
-
-%-------------------------------------------------------------------------------
-\begin{filecontents}{\jobname.bib}
-%-------------------------------------------------------------------------------
-@Book{arpachiDusseau18:osbook,
-  author =       {Arpaci-Dusseau, Remzi H. and Arpaci-Dusseau Andrea C.},
-  title =        {Operating Systems: Three Easy Pieces},
-  publisher =    {Arpaci-Dusseau Books, LLC},
-  year =         2015,
-  edition =      {1.00},
-  note =         {\url{http://pages.cs.wisc.edu/~remzi/OSTEP/}}
-}
-@InProceedings{waldspurger02,
-  author =       {Waldspurger, Carl A.},
-  title =        {Memory resource management in {VMware ESX} server},
-  booktitle =    {USENIX Symposium on Operating System Design and
-                  Implementation (OSDI)},
-  year =         2002,
-  pages =        {181--194},
-  note =         {\url{https://www.usenix.org/legacy/event/osdi02/tech/waldspurger/waldspurger.pdf}}}
-\end{filecontents}
 
 %-------------------------------------------------------------------------------
 \begin{document}
@@ -39,7 +16,6 @@
 % make title bold and 14 pt font (Latex default is non-bold, 16 pt)
 \title{\Large \bf Software Security Analysis of Ethereum Smart Contracts}
 
-%for single author (just remove % characters)
 \author{
 {\rm Nicolas Schapeler}\\
 TUM Chair of IT Security
@@ -56,13 +32,13 @@ TUM Chair of IT Security
 %-------------------------------------------------------------------------------
 \section{Motivation}
 %-------------------------------------------------------------------------------
-In recent years blockchain technology has seen more and more widespread adoption, ranging far from its initial use case of a decentralized means to exchange electronic cash, as introduced by Bitcoin. 
+In recent years blockchain technology has seen more and more widespread adoption, ranging far from its initial use case of a decentralized means to exchange electronic cash, as introduced by Bitcoin \cite{nakamoto}. 
 
-A key innovation in this space has been the introduction of so-called smart contracts, which were first implemented by the Ethereum protocol based on the ideas of Computer Scientist Nick Szabo. These are programs that execute automatically on the Ethereum network if certain conditions are met or if they are invoked by a blockchain participant. Through these, one can create more complex applications while still retaining the built-in trustlessness and security for which blockchain technology was initially designed. Today, smart contracts are used to automate various processes, ranging from supply chain management over energy distribution in smart grids to health care. 
+A key innovation in this space has been the introduction of so-called smart contracts, which were first implemented by the Ethereum protocol based on the ideas of Nick Szabo \cite{szabo_1996}. These are programs that execute automatically on the Ethereum network if certain conditions are met or if they are invoked by a blockchain participant. Through these, one can create more complex applications while still retaining the built-in trustlessness and security for which blockchain technology was initially designed. Today, smart contracts are used to automate various processes, ranging from supply chain management \cite{bhandari_2018} over energy distribution in smart grids \cite{giannakaris_trakadas_zahariadis_gkonis_papadopoulos_2019} to health care \cite{griggs_ossipova_kohlios_baccarini_howson_hayajneh_2018}. 
 
-The use case that provides the main motivation for this paper, however, is Finance. Here smart contracts are used to automate and enforce financial agreements between different parties, such as loan provisions, asset exchanges, and asset management amongst others. At the time of this writing, four of the top smart contracts on the Ethereum network manage around 60 Billion USD, with hundreds of other contracts overseeing multiple millions in value. Considering this in addition to the relative novelty of the field to both developers and law enforcement along with the built-in anonymity of blockchain technology applications, one can deduce why this field presents such an attractive target to malicious actors - At its current stage, performing an attack on a smart contract application often yields extremely high rewards in comparison to the risk of facing consequences. 
+The use case that provides the main motivation for this paper, however, is Finance. Here smart contracts are used to automate and enforce financial agreements between different parties, such as loan provisions, asset exchanges, and asset management amongst others. At the time of this writing, four of the top smart contracts on the Ethereum network manage around 60 Billion USD \cite{nr1} \cite{nr2} \cite{nr1T} \cite{nr2T}, with hundreds of other contracts overseeing multiple millions in value. Considering this in addition to the relative novelty of the field to both developers and law enforcement along with the built-in anonymity of blockchain technology applications, one can deduce why this field presents such an attractive target to malicious actors - At its current stage, performing an attack on a smart contract application often yields extremely high rewards in comparison to the risk of facing consequences. 
 
-For these reasons, smart contracts have been the target of multiple high-profile attacks in the past years. The first large-scale attack was the DAO-Attack in 2016, where 3.6 Million Ether, worth around 50 Million USD at the time or 10 Billion USD today,  was stolen and lead to the developers of Ethereum taking the controversial action of manually reverting the attacker's exploit transactions. Other prominent attacks include the King of the Ether Throne attack in 2016 and the Parity Multisig Wallet Attack in 2017 (more details regarding the exact exploits used in these attacks are given in the Background). The reason we mention these specific attacks is that all of them exploited vulnerabilities that in hindsight appear relatively simple. The key significance, however, is that the vulnerabilities utilized are all smart contract-specific, and may therefore not be intuitively detected by a developer with lesser experience developing such applications. As previously mentioned, due to the relative novelty of smart contracts, few developers are highly experienced and are therefore prone to fall victim to already-known vulnerabilities. For this reason, we believe the software security analysis methodologies and tools disclosed in this paper are of key importance in a space where each security flaw can lead to significant financial loss: They allow for the detection of vulnerabilities the developer may not be aware of or may have overlooked. 
+For these reasons, smart contracts have been the target of multiple high-profile attacks in the past years. The first large-scale attack was the DAO-Attack in 2016, where 3.6 Million Ether, worth around 50 Million USD at the time or 10 Billion USD today,  was stolen and lead to the developers of Ethereum taking the controversial action of manually reverting the attacker's exploit transactions \cite{atzei_bartoletti_cimoli_2017}. Other prominent attacks include the King of the Ether Throne attack in 2016 and the Parity Multisig Wallet Attack in 2017 \cite{atzei_bartoletti_cimoli_2017}(more details regarding the exact exploits used in these attacks are given in the Background). The reason we mention these specific attacks is that all of them exploited vulnerabilities that in hindsight appear relatively simple. The key significance, however, is that the vulnerabilities utilized are all smart contract-specific, and may therefore not be intuitively detected by a developer with lesser experience developing such applications. As previously mentioned, due to the relative novelty of smart contracts, few developers are highly experienced and are therefore prone to fall victim to already-known vulnerabilities. For this reason, we believe the software security analysis methodologies and tools disclosed in this paper are of key importance in a space where each security flaw can lead to significant financial loss: They allow for the detection of vulnerabilities the developer may not be aware of or may have overlooked. 
 
 This Systemization of Knowledge begins by giving a brief overview of the background concepts regarding software security analysis and Ethereum smart contracts, followed by a systemization of different approaches to security fault detections, where we present and experimentally test claims regarding accuracy and performance of various existing tools. 
 
@@ -73,7 +49,7 @@ This Systemization of Knowledge begins by giving a brief overview of the backgro
 In this section, we provide the theoretical background information related to software security analysis and Ethereum necessary for understanding the rest of this paper.
 
 \subsection{Ethereum}
-Ethereum is an open software protocol that allows for the decentralized execution of smart contracts and the exchange of value in its native cryptocurrency, Ether \footnote{Technically the unit smart contracts and accounts exchange value in is Wei, however we use Ether in the context of this paper as this makes the numbers far more manageable. ( 1 Ether = $10^{18}$ Wei) }.  These smart contracts run on the Ethereum Virtual Machine (EVM). 
+Ethereum is an open software protocol that allows for the decentralized execution of smart contracts and the exchange of value in its native cryptocurrency, Ether \footnote{Technically the unit smart contracts and accounts exchange value in is Wei, however we use Ether in the context of this paper as this makes the numbers far more manageable. ( 1 Ether = $10^{18}$ Wei) }.  These smart contracts run on the Ethereum Virtual Machine (EVM). The specification of the Ethereum protocol and the EVM is precisely explained in Wood's Ethereum yellowpaper \cite{wood_2021}. We provide a shortened overview based on his work below:
 
 \subsubsection{EVM}
 
@@ -85,12 +61,13 @@ The Ethereum Virtual Machine is a distributed state machine with its own set of 
 In this context, a significant data structure for the Ethereum protocol is the account. This data structure has the ability to send and receive transactions, hold a balance of Ether, and interact with other smart contracts. We differentiate between two types of accounts, externally-owned accounts and smart contracts. Externally-owned accounts are generated using a public-private key-pair and can interact with the rest of the Ethereum Network using the private key's signature as proof an instruction stems from a specific account. These signed EVM instructions that accounts use to interact with one another are called transactions.  Smart Contracts, on the other hand, are deployed as pieces of software and do not come with a private-public key pair. They define a set of callable functions that other network participants can invoke. As such, a key difference between smart contracts and externally-owned accounts is that smart contracts can only perform transactions if they were first invoked by a different account. As smart contracts can be called by any account (both externally owned and other smart contracts) on the Ethereum network, it is crucial that all network participants agree what a smart contract can and cannot do. To enforce this, the code of smart contracts is strictly immutable \footnote{To be clear, only the code of smart contracts is immutable. Smart Contracts can still contain various data structures such as variables, mappings, arrays etc. which are mutable.}.
 
 \subsubsection{Gas Fees}
+\label{subsection:gas}
 
 As previously mentioned, the physical hardware the EVM runs on and transactions are executed on is provided by a subset of all network participants, called nodes. Since these do not want to give storage and computing power away for free, Ethereum implements a gas system, whereby each operation offered by the EVM is assigned a certain gas cost \footnote{It should be noted that taking up memory also has a certain gas cost which scales with the amount of memory taken up. This has the consequence that smart contracts are often tried to be written as concisely as possible as to avoid any unnecessary memory takeup when deploying its code onto the network and therefore spending.}. This gas is just a fee in Ether paid for the computing effort and/or storage provided by the nodes. It is important to note that the maximum an account is willing to pay for these gas fees is set by the transaction initiator, not the processing nodes. The nodes, however, have the choice of processing transactions in whatever order they please and will usually choose transactions with the highest fees and lowest effort to themselves. This means a transaction can take a significant amount of time to be processed or be rejected by the nodes altogether if the nodes believe the fees are not high enough for their expended effort. It is also to be noted, that blocks in the Ethereum Network have an upper gas limit, a limit on how much computation can be done and how much gas can be spent in one block, which can also lead to a transaction being reverted if the work performed in it costs more gas than the upper gas limit.
 
 \subsection{Solidity}
 \label{subsection:sol}
-Although the smart contract representation one finds on the physical blockchain is in EVM bytecode, very few smart contracts are manually written in this form and instead employ higher-level languages. There are multiple programming languages specifically adapted for developing smart contracts, however, in the context of this paper, we set our focus on Solidity. The reason we choose this language is not only for it being the most popular [citation] but also due to it having received criticism for being designed in a way that facilitates errors that lead to security flaws in smart contract development. We introduce some of these patterns here in order to better help the reader's understanding of the types of issues the software security analysis tools detect in the Contribution section of this paper.
+Although the smart contract representation one finds on the physical blockchain is in EVM bytecode, very few smart contracts are manually written in this form and instead employ higher-level languages. There are multiple programming languages specifically adapted for developing smart contracts, however, in the context of this paper, we set our focus on Solidity. The reason we choose this language is not only for it being the most popular \cite{gebele_2020} but also due to it having received criticism for being designed in a way that facilitates errors that lead to security flaws in smart contract development\footnote{This can partially be seen by the long list of pitfalls provided by the official documentation\cite{ethereumrevision0bbfe453}}. We introduce some of these patterns here in addition to other Ethereum-specific security vulnerabilities in order to better help the reader's understanding of the types of issues the software security analysis tools detect in the Contribution section of this paper.
 
 \begin{itemize}
   \item Inconsistent Exception handling
@@ -102,12 +79,12 @@ Although the smart contract representation one finds on the physical blockchain 
 	\item \verb|<receivingAddress>.call().gas().value(amount)|
 	\end{enumerate}
 	
-	These have some key differences: The \verb|transfer| method throws an exception if the transfer fails for any reason and reverts the entire transaction it was a part of. The other two, however, simply return \verb|False| on failure and do not revert the transaction. Additionally, \verb|transfer| and \verb|send| have a fixed gas fee when used, while \verb|call| can have its gas fee set by the invoker \footnote{Though we use $call$ in this context to transfer funds, the main use of this command is to invoke a smart contract's function.}. 
+	These have some key differences: The \verb|transfer| method throws an exception if the transfer fails for any reason and reverts the entire transaction it was a part of. The other two, however, simply return \verb|False| on failure and do not revert the transaction. Additionally, \verb|transfer| and \verb|send| have a fixed gas fee when used, while \verb|call| can have its gas fee set by the invoker \footnote{Though we use $call$ and $send$ in this context to transfer funds, the main use of these commands is to invoke a function in a smart contract}. 
   \item Fallback function
   
   Smart contracts have the option of defining a so-called fallback function which is executed when receiving Ether without the sender specifying a function call\footnote{If a contract does not define such a function, it cannot receive Ether.}. Aside from being executed as a side effect to receiving Ether, this function is also executed in other situations that may seem unexpected. Given a contract $C$ with a function with the signature \verb|function f(uint) returns (byte)|, if one were to call the function \verb|function f(int) returns (byte)| (notice the incorrect signature) on $C$, the result would not be a revoked transaction, exception, or a returned \verb|False| boolean, but rather an execution of the fallback function of $C$. The same is true if one mistypes the address of $C$ and attempts to invoke the nonexistent function \verb|f| on a contract $C'$, the result is an execution of the fallback function of $C'$. 
   
-  This behavior worked in conjunction with the exception handling inconsistencies to cause the King of the Ether Throne attack mentioned in the introduction. There, the essence of the attack was invoked through the usage of the previously introduced \verb|send| function in the vulnerable contract. The intention of \verb|send| in the victim contract was to simply send an amount of Ether to an address, however the programmer had forgotten about the side-effect of the invoked fallback function if the recipient is a contract. Next, the \verb|send| function's fixed gas fee was not enough to pay for the attacker's contract's fallback function fee and an exception was produced, which \verb|send| returns through the use of a boolean. The victim contract, however, had no boolean check for \verb|send|, which resulted in the victim contract finding itself in a deadlocked state.
+  This behavior worked in conjunction with the exception handling inconsistencies to cause the King of the Ether Throne attack mentioned in the introduction \cite{atzei_bartoletti_cimoli_2017}. There, the essence of the attack was invoked through the usage of the previously introduced \verb|send| function in the vulnerable contract. The intention of \verb|send| in the victim contract was to simply send an amount of Ether to an address, however the programmer had forgotten about the side-effect of the invoked fallback function if the recipient is a contract. Next, the \verb|send| function's fixed gas fee was not enough to pay for the attacker's contract's fallback function fee and an exception was produced, which \verb|send| returns through the use of a boolean. The victim contract, however, had no boolean check for \verb|send|, which resulted in the victim contract finding itself in a deadlocked state.
   
     \item Reentrancy
     
@@ -142,10 +119,17 @@ contract Attacker{
 }
   \end{verbatim}
   
-As one can deduce from the provided code, the vulnerability here is that the bank first sends money to the withdrawing account before removing the sent money from the account's balance. Additionally, the bank uses the \verb|call| function to send money and does not specify a maximum gas fee. An attacker can therefore implement a more complex fallback function without the risk of their money transfer failing due to the gas fee of their fallback function being too high. The attacker leverages this by calling the withdraw function again, thereby being able to withdraw as much money as he wants from the bank contract until the bank is out of money. This sort of vulnerability is what was leveraged in the DAO Attack mentioned in the introduction. 
+As one can deduce from the provided code, the vulnerability here is that the bank first sends money to the withdrawing account before removing the sent money from the account's balance. Additionally, the bank uses the \verb|call| function to send money and does not specify a maximum gas fee. An attacker can therefore implement a more complex fallback function without the risk of their money transfer failing due to the gas fee of their fallback function being too high. The attacker leverages this by calling the withdraw function again, thereby being able to withdraw as much money as he wants from the bank contract until the bank is out of money. This sort of vulnerability is what was leveraged in the DAO Attack mentioned in the introduction \cite{atzei_bartoletti_cimoli_2017}. 
+
+    \item Transaction Order Dependence
+
+    As explained in Section~\ref{subsection:gas}, one cannot predict the order in which transactions arrive with 100\% accuracy, as it is the processing nodes that determine which transactions they choose to handle first. This situation is comparable to race conditions in other types of programming. If a contract is dependent on the order in which transactions arrive in spite of this and does not implement a way to handle this indeterminism, one can easily construct examples where this could lead to unexpected behavior, especially if one considers every transaction can be read by the processing nodes prior to their execution. For example, consider a contract that sells an asset, where Alice is the owner of said asset and Bob is the buyer. Bob sends a transaction to buy the asset at the time where it costs 1 Ether. Alice sees this transaction prior to being processed and quickly sends off a transaction setting her assets price to 100 Ether. With a high enough gas price or large enough control over the processing nodes, Alice can ensure her transaction arrives prior to Bob's, draining Bob of 99 more Ether than he had planned to pay originally.
+    
+    
+
 
 	\item Denial of Service using Gas Limit
-	The final attack vector we seek to present is a DoS attack. Assume we have given the following contract:
+	The final attack vector we seek to present is a DoS attack, based on Atzei's 2017 SoK of Ethereum Attacks \cite{atzei_bartoletti_cimoli_2017}. Assume we have given the following contract:
 	
 \begin{verbatim}
 contract DoS{
@@ -173,11 +157,20 @@ Finally, we introduce some general security analysis methodologies which adaptio
 
 \subsubsection{Symbolic Execution}
 
-Symbolic Execution functions by taking a program's source code as an input and assigning symbolic values to unknown inputs. It then executes the given program using said symbolic values and is thereby able to compute expressions for the unknown inputs along with fitting constraints belonging to each possible execution path of a program. A key limitations of symbolic execution is path explosion, where the number of possible paths to symbolically execute becomes very large very quickly for large programs, especially if these contain loops that cannot be trivially rolled out.
+Symbolic Execution functions by taking a program's source code as an input and assigning symbolic values to unknown inputs. It then executes the given program using said symbolic values and is thereby able to compute expressions for the unknown inputs along with fitting constraints belonging to each possible execution path of a program. These constraints can then be solved to determine a concrete input that leads to the execution of a given path. This is usually done with the help of an SMT (Satisfiability modulo theories) solver which can  determine if a given first-order logical expression is satisfiable. An example of such a solver is the Z3 Solver developed by Moura and Bjorner \cite{moura_bjorner_2008}. A key limitations of symbolic execution is path explosion, where the number of possible paths to symbolically execute becomes very large very quickly for large programs, especially if these contain loops that cannot be trivially rolled out. Additionally, operating system models such as file systems can also prove to be difficult to simulate.
+
+\subsubsection{Symbolic Model Checking}
+The general idea of Model Checking is to generate the set of states a program can reach and to verify wether a set of given properties hold true in each of these states \cite{osterland_rose_2020}. If a state is found that violates a property, an example to reach this state is usually provided for debugging. Like symbolic execution, a key weakness of this approach is state space explosion; the number of reachable states grows very fast when the size of the code to be analyzed becomes larger. Symbolic Model Checking is a method to somehwat mitigate this issue, as it represents each state not as explicit values but rather as logical formulas  or similar data structures representing a set of equivalent inputs.
+
+\subsubsection{Taint Analysis}
+Taint analysis focuses on tracking data inputed by users and verifying if it is properly sanitized as to prevent harm to the system accepting it.
 
 \subsubsection{Mutation Testing}
-The goal of mutation testing is to assess the efficiency of the test suite belonging to a certain piece of software. It works by generating so-called "mutants" of the provided source code, which are clones of the original code with slight alterations (for example, a change from a $>$ to a $\geq$). Then, the given test suite is ran on these generated mutants and the amount of mutants which pass the tests is measured. Generally, a low amount of mutants passing all tests is viewed as evidence of the test suite's high quality.
+\label{subsection:mut}
+The goal of mutation testing is to assess the efficiency of the test suite belonging to a certain piece of software. It works by generating so-called "mutants" of the provided source code, which are clones of the original code with slight alterations (for example, a change from a $>$ to a $\geq$). Then, the given test suite is ran on these generated mutants and the amount of mutants that pass the tests is measured. Generally, a low amount of mutants passing all tests is viewed as evidence of the test suite's high quality.
 
+\subsubsection{Fuzzing}
+Fuzzing functions by inputting random and/or purposefully invalid data into a program one seeks to test and monitoring the program for unexpected behavior, such as crashes or exceptions.
 
 %-------------------------------------------------------------------------------
 \section{Security Analysis Methodologies}
@@ -189,16 +182,16 @@ In this section we present current methodologies for detecting security analysis
 We define static analysis as analysis performed on smart contract code or bytecode performed in a non-runtime environment without direct execution of the given smart contract.
 
 
-Due to the general difficulty of realizing a realistic simulation of the runtime environment of smart contracts, there is a wide array of static analysis methods. One of the reasons for this difficulty is that some Ethereum-specific security flaws stem from the outcome of operations dependent on arrival times of transactions on the blockchain, the order of which is determined by the nodes on the network and is therefore non-deterministic. Additionally, many smart contracts interact with other smart contracts and writing stubs for all of these can prove to be very time-consuming and in some cases, unfeasible.
+Due to the general difficulty of realizing a realistic simulation of the runtime environment of smart contracts, there is a wide array of static analysis methods. One of the reasons for this difficulty is that some Ethereum-specific security flaws stem from the outcome of operations dependent on arrival times of transactions on the blockchain, the order of which is determined by the nodes on the network and is therefore non-deterministic. Additionally, many smart contracts interact with other smart contracts and writing stubs for all of these can prove to be very time-consuming and in some cases, unfeasible. Note that each of the headings from here on refer to the usage of a specific technique in the context of Ethereum as opposed to its usage in general, as was the case in the previous section.
 
 
 \subsubsection{Symbolic Execution}
 A technique commonly found in various automated software security analysis engines is symbolic execution. Symbolic execution provides the advantage of analyzing contract code based on available paths rather than available inputs. The amount of possible paths are often easier to generate than inputs that, depending on order, lead to differing outcomes. 
 
-Furthermore, smart contracts generally mitigate some of the weaknesses of symbolic execution mentioned earlier: First, they are generally kept rather short, as each additional unit of memory comes with a certain gas cost when deploying onto the Ethereum network. Next, smart contracts often avoid unbounded/unconstrained loops, as these can also pose a security risk and lead to potential DoS attacks, as explained in Section ~\ref{subsection:sol}.
+Furthermore, smart contracts generally mitigate some of the weaknesses of symbolic execution mentioned earlier: First, they are generally kept rather short, as each additional unit of memory comes with a certain gas cost when deploying onto the Ethereum network. Next, smart contracts often avoid unbounded/unconstrained loops, as these can also pose a security risk and lead to potential DoS attacks, as explained in Section ~\ref{subsection:sol}. Additionally, compared to a regular computer, the EVM is comparatively simple to simulate, as it does not have many operating system-like features.
 
 
-One of the first tools to utilize this was OYENTE. OYENTE can detect 4 types of security weaknesses: Transaction Ordering Dependences (TOD), Timestamp Dependences \footnote{This vulnerability simply refers to a contract that executes based on the block timestamp. The reason this is insecure is because the node that processes the block can vary the timestamp by up to 900 seconds from the real system time and could thereby influence the contract execution in their favor.}, Exception Mishandling, and Re-entrancy vulnerabilities. OYENTE takes two inputs, namely the EVM bytecode of the contract to be analyzed and the current global state of the Ethereum Network. Here, the latter input is used to initialize certain contract variables from the bytecode in order to ensure a more accurate base state to perform symbolic execution from. The tool thereby leverages the availability and accessibility of both these inputs, as both are stored on the Ethereum blockchain and can be obtained using most Ethereum block explorers for any given smart contract. 
+One of the first tools to utilize this was OYENTE which was introduced by Luu \cite{luu_chu_olickel_saxena_hobor_2016}. OYENTE can detect 4 types of security weaknesses: Transaction Ordering Dependences (TOD), Timestamp Dependences \footnote{This vulnerability simply refers to a contract that executes based on the block timestamp. The reason this is insecure is because the node that processes the block can vary the timestamp by up to 900 seconds from the real system time and could thereby influence the contract execution in their favor.}, Exception Mishandling, and Re-entrancy vulnerabilities. OYENTE takes two inputs, namely the EVM bytecode of the contract to be analyzed and the current global state of the Ethereum Network. Here, the latter input is used to initialize certain contract variables from the bytecode in order to ensure a more accurate base state to perform symbolic execution from. The tool thereby leverages the availability and accessibility of both these inputs, as both are stored on the Ethereum blockchain and can be obtained using most Ethereum block explorers for any given smart contract.
 
 \begin{figure}
 \begin{center}
@@ -208,19 +201,44 @@ One of the first tools to utilize this was OYENTE. OYENTE can detect 4 types of 
 \end{figure}
 
 
-OYENTE works in 4 steps, depicted in Figure~\ref{fig:oyente}: First, it generates a control flow graph of the smart contract at hand which it then performs symbolic execution on. The output of this operation is then scanned for previously defined security vulnerability patterns. The product of the previous step is then filtered for false positives and finally returned to the user. OYENTE is specifically highlighted in this paper, as it was one of the first checkers in the space and designed with extendability in mind, serving as the base for multiple others [Ethir, The ones in that paper ]
+OYENTE works in 4 steps, depicted in Figure~\ref{fig:oyente}: First, it generates a control flow graph (CFG) of the smart contract at hand. Next, the Explorer component iterates over all symbolic states\footnote{Or until a pre-defined execution time limit is reached.}, starting with the entry node of the CFG. In each of these states the Explorer then symbolically executes a single instruction. If such an instruction is a branching conditional, the Explorer queries the Z3 constraint solver [cite Z3] to determine if either of the possible paths is provably impossible to reach, in which case that path is ignored. If not, both paths are explored in a depth-first manner. This exploration produces a set of symbolic traces along with fitting path constraints and other data used in later steps. The output of this operation is then scanned for the previously defined security vulnerabilities. This is done by checking for certain patterns in the symbolic trace \footnote{For example, to find if the contract mishandles exceptions, it is verified in the symbolic trace that everytime an exception is thrown and the contract pushes a boolean to the stack, the contract also performs a check for that boolean right after. This sort of detection is the general idea for the other 3 patterns as well, however closer explanation would go outside the scope of this paper.} In the final analysis step, validation, the detected vulnerable traces are checked using the Z3 solver to ensure that they are provably reachable, thereby eliminating false positives \footnote{The authors warn, however, that the validator is "far from being complete" \cite{luu_chu_olickel_saxena_hobor_2016}}. Finally, the result is displayed to the user. OYENTE is specifically highlighted in this paper, as it was one of the first checkers in the space and designed with extendability in mind, serving as the base for multiple others \cite{zhou_hua_pi_sun_nomura_yamashita_kurihara_2018}\cite{albert_gordillo_livshits_rubio_sergey_2018}. A particularly interesting extension of OYENTE is Chen's GASPER \cite{chen_li_luo_zhang_2017}, which uses OYENTE as a base to detect code that uses an unnecessarily high amount of gas \footnote{Unregulated gas spend can lead to unintended behavior of the smart contract if not handled adequately and can be exploited by a malicious actor to manipulate the smart contract in his favor, for examply by provoking a DoS attack as presented in section \ref{subsection:sol}.} and identifies a set of gas costly patterns defined by the authors. 
 
-\subsubsection{Visualization Tools}
-The first construction of OYENTE, the Control Flow Diagram, can not only be found in most checkers employing symbolic execution but also in various other, often more lightweight, tools. The Ethereum ecosystem is compatible with various custom pieces of software used to visualize control flow, documentation, and smart contract structure amongst other things. Though these tools are not as sophisticated as symbolic analysis, they are more accessible to beginners and useful for preventing large errors along with providing simplified access to documentation. 
+ A different software security analysis tool that uses symbolic execution is Mythril by Mueller \cite{mueller}. The general functionality of Mythril is rather similar to that of OYENTE, however a significant advance Mythril made over OYENTE is in deciding which paths are feasible during its equivalent of OYENTE's Explorer phase: Aside from using the Z3 solver to determine if a path is reachable, Mythril also introduces a variety of other ways to reduce the number of paths explored in an update to the original paper co-authored by Luca \cite{mueller_luca_2019}: 
 
-\subsubsection{Generic Property Verification}
-A key flaw of OYENTE is its limitation of only detecting security flaws and verifying properties that are specifically hard-coded into it. However, as time passes and the Ethereum ecosystem grows, new security flaws are discovered which one wants to check for as well. The developers of OYENTE heeded this fact when they originally designed it by allowing for simple extendability, however, this still requires one to manually program an extension for OYENTE if one desires to verify a specific property that is not part of the original implementation of OYENTE. Therefore, property verifiers that take in some form of security policy were developed. 
+\begin{enumerate}
+	\item Pure functions 
+	
+	If a function has no side effects and is deterministic, we call it a pure function. As the execution of such a function has no effect on the state of the smart contract it is invoked on, Mythril filters these out of their paths when performing symbolic execution.
+	
+	\item First encounter
+	
+	
+	When encountering a new path to execute, Mythril verifies if the path has been executed before and only follows it if that is not the case.
+	
+	\item Variable Edited
+
+	Mythril only executes a path if this path reads a variable that was edited elsewhere or if this path writes a variable that is read elsewhere.
+	
+	\item Directed Execution
+	
+	This method allows an outside party to give the symbolic execution tool information about certain variables (e.g. ranges for integers) and to specify parts of the code where symbolic execution is not needed.	
+	
+	\item State merging
+	
+	After a symbolic execution step takes place, merge states together by concatenating their constraints together using a logical \verb|OR|. This approach is not used by Mythrill, but has been implemented in other tools \cite{mossberg_manzano_hennenfent_groce_grieco_feist_brunson_dinaburg_2019}.
+	
+	
+\end{enumerate}
+
+\subsubsection{Generic Property Verifiers}
+Symbolic Analysis tools as presented in the previous section have room for extension, as they are  limitated to only detecting the security flaws that are hard-coded into them. However, as time passes and the Ethereum ecosystem grows, new security flaws are discovered which one wants to check for as well. The developers of OYENTE heeded this fact when they originally designed it by allowing for simple extendability, however, this still requires one to manually program an extension for OYENTE if one desires to verify a specific property that is not part of the original implementation of OYENTE. Therefore, property verifiers that take in some form of security policy were developed. 
 
 
-The first notable example of this was ZEUS, which takes in the Solidity source code of a given smart contract along with a policy specification of properties to test and uses symbolic model checking along with abstract interpretation to verify these. Broadly speaking, ZEUS works by first inserting the predicates specified by the policy into the source code using assert statements, then translating the source code along with the new embedded statements to LLVM bytecode and finally determining violations to the predicates set by the policy. In addition to being more flexible, the authors claim ZEUS is significantly faster than OYENTE in addition to detecting fewer false positives. 
+An example of such a generic property checker is ZEUS by Kalra \cite{kalra_goel_dhawan_sharma_2018}, which takes in the Solidity source code of a given smart contract along with a policy specification of properties to test and uses symbolic model checking to verify these. Broadly speaking, ZEUS works by collecting the constraints and their auxiliary information in the XCAML (eXtensible Access Control Markup Language) format. Next, it translates the source code to an abstract contract language introduced in the paper and, using the XCAML representation, inserts the predicates specified by the policy into this code using \verb|assert| statements. This \verb|assert|-enhanced code is then translated to LLVM (Low Level Virtual Machine) \cite{lattner_adve} byte code. Finally, ZEUS uses a symbolic model checker to to verify that each of the conditions specified in the policy and therefore represented by an \verb|assert| statement holds true. The checker used in ZEUS is SeaHorn \cite{gurfinkel_kahsai_komuravelli_navas_2015}, however ZEUS is compatible with any checker that operates on LLVM code. Additionally, the authors claim ZEUS is significantly faster than OYENTE in addition to detecting fewer false positives. 
 
 
-A further important contribution in this field was Securify, which is currently  Securify works by symbolically encoding the dependence graph of a given contract in the Datalog programming language which allows for the utilization of scalable Datalog solvers stemming from previous research to detect domain-specific vulnerabilities specified by the user.
+A further contribution in this field was Securify introduced by Tsankov \cite{tsankov_dan_drachsler-cohen_gervais_bünzli_vechev_2018}.  Similar to ZEUS, Securify functions by taking in the contract code as EVM bytecode along with a list of insecure semantic patterns to scan for. First, it transforms this EVM bytecode into a stackless representation in static single assignment (SSA) \footnote{This is an intermediate form with two properties, each variable is only assigned once and each variable has to be defined before being used.} form. Once this form has been reached, Securify scans it for semantic facts, such as control-flow dependencies between two variables. These semantic facts are saved in stratified Datalog. The advantage of doing this, is that this representation can be compared to the provided security patterns using existing Datalog solvers. A key improvement the authors of Securify sought to make over ZEUS, was the introduction of violation patterns, whereas ZEUS only supports compliance patterns. Given a certain security property, a compliance pattern is defined as implying for this property to be satisfied, whereas a violation pattern implies this property to not be satisfied.
+
 
 \subsubsection{Formal Verification}
 A different approach to static analysis is through means of formal verification and theorem provers. 
@@ -229,72 +247,58 @@ A different approach to static analysis is through means of formal verification 
 \begin{center}
 \includegraphics[scale=0.2]{Fstar}
 \end{center}
-\caption{\label{fig:oyente} The F* Tool's Structure}
+\caption{\label{fig:fstar} The F* Tool's Structure}
 \end{figure}
 
 
-The most widely-known usage of this approach is through the use of the F*-Framework by Bhargavan. The authors aim to ensure the functional correctness and runtime safety of a given Solidity smart contract. The paper proposes an architecture of two translators, one taking in Solidity Code, and one taking in EVM Bytecode. Each of these translators translates their input into the functional language F*, on which runtime safety and functional correctness checks are performed. In the rare case (the authors claim this is the case for only 396 out of 112,802 contracts on Etherscan) where both the Solidity Code and EVM Bytecode for a given contract is available, the architecture can additionally be used to verify the functionality of the Solidity Compiler by checking the equivalence of the two generated F* programs. 
-Further research has been conducted in using even more formal methods and thereby employing existing theorem checkers such as Isabelle to verify certain properties of EVM Bytecode. Though formal verification of security properties eliminates false positives, in practice its usability is lower than other approaches presented here, as the possibility for automating formal proofs is more limited, and even in cases where it is possible, the authors claimed it often resulted in long and repetitive proofs for even small amounts of EVM Bytecode.
+One example is the F*-Framework by Bhargavan \cite{bhargavan_delignat-lavaud_fournet_gollamudi_gonthier_kobeissi_kulatova_rastogi_sibut-pinote_swamy_etal._2016}. The authors aim to ensure the functional correctness and runtime safety of a given Solidity smart contract. The paper proposes an architecture of two translators, one taking in Solidity Code, and one taking in EVM Bytecode. This setup is visualized in Figure~\ref{fig:fstar}. Each of these translators translates their input into the functional language F*. Once a representation in F* is obtained, functional correctness checks can be performed on certain properties \footnote{The authors only mention checking for a valid gas limit in their paper.} which are verified by a SMT solver \footnote{The SMT solver can be applied to queries generated from F*'s "rich type system" and "monadic effect", however the authors do not explain how this works in more detail.}. In the rare case (the authors claim this is the case for only 396 out of 112,802 contracts on Etherscan) where both the Solidity Code and EVM Bytecode for a given contract is available, the architecture can additionally be used to verify the functionality of the Solidity Compiler by checking the equivalence of the two F* programs generated from the Solidity code and EVM byte code. 
+Further research has been conducted in employing existing theorem checkers such as Isabelle\cite{amani_bégel_bortin_staples_2018} to verify certain properties of EVM Bytecode. Though formal verification of security properties eliminates false positives, in practice its usability is lower than other approaches presented here, as the possibility for automating formal proofs is more limited, and even in cases where it is possible, the authors claimed it often resulted in long and repetitive proofs for even small amounts of EVM Bytecode. Furthermore, formal verification tools usually have a slower runtime then other techniques and are less accessible to users, as they often require knowledge in proof-writing.
 
-\subsubsection{Linters}
-An additional form of bug prevention and thereby software security insurance is the maintenance of a clean code style. Similar to many other programming languages, various linters such as Solcheck and Solint exist to enforce such standards for the Solidity programming language.
-
-\subsubsection{Code Metrics}
-Code Metrics play a significant role in the Quality Assurance process of many traditional software projects which target it is to minimize bugs and maximize code quality. These two goals go hand-in-hand with maximizing security, for which reason Péter Hegedűs developed SolMet. SolMet is a static analysis tool that aims to collect the same data on solidity code as tools traditionally used in QA do. Examples for this data collected by SolMet range from simple metrics such as LOC (Lines of Code) to more complex metrics values like the McCC (McCabe’s cyclomatic complexity).
-
-
-\subsubsection{Lowering Gas Spend}
-A further important issue that is highly specific to Ethereum is the detection of code that uses an unnecessarily high amount of gas. The reason why this is a security issue rather than a general inconvenience is due to the language design of solidity which does not throw an exception when instructions such as send fail due to insufficient gas. This can lead to unintended behavior of the smart contract if not handled adequately and can be exploited by a malicious actor to manipulate the smart contract in his favor. To address this issue, the GASPER tool was developed to identify gas costly patterns identified by the authors. Similar to previously discussed tools like OYENTE, GASPER also works on Ethereum bytecode and utilizes symbolic execution on the control flow graph to detect gas costly patterns.
-
-
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.15]{Slither}
-\end{center}
-\caption{\label{fig:oyente} The Slither Tool's Structure}
-\end{figure}
-
-\subsubsection{State-of-the-art and Slither}
-At the time of this writing, the state-of-the-art for static software security analysis is Slither. Slither works by taking in the abstract syntax tree provided by the Solidity compiler rather than the EVM bytecode in order to preserve more information regarding the structure of the previous solidity code. Based on this information, Slither converts the input to its internal representation, SlithIR, which uses static single assignment to ease the next step. In the third step, Slither performs some general analyses using which can serve as a base for detecting various vulnerabilities (which can be extended by the user) in the final stage. The authors claim it to be significantly faster and more accurate than competing analyzers.
 
 \subsection{Dynamic Analysis Methods}
 
 We define dynamic analysis as analysis performed on smart contracts in a runtime environment with the execution of the given smart contract.
 
 
-Through dynamic analysis is more complex due to reasons previously explained for smart contracts, significant progress has been made in the field. In fact, state-of-the-art security audits of smart contracts very rarely solely perform static or dynamic analysis. Most use a combination of methods from both fields, as their weaknesses cover each other: Static analysis methods are generally better at exploring a wider variety of control flow paths but have an inclination of leading to false positives. On the other hand, due to the challenge of simulating all possible on- and off-chain events for a given smart contract, dynamic analysis methods tend to have more difficulty exploring all possible control flow paths of a given smart contract, but rarely lead to false positives. However, a key flaw in most static analysis methods is that most tools currently only work for "flat" invocations of contracts, that is calls to smart contracts that occur one single time.
+Most security audits today use a combination of static and dynamic analysis methods, as their weaknesses cover each other: Static analysis methods are generally better at exploring a wider variety of control flow paths but have an inclination of leading to false positives. On the other hand, due to the challenge of simulating all possible on- and off-chain events for a given smart contract, dynamic analysis methods tend to have more difficulty exploring all possible control flow paths of a given smart contract, but rarely lead to false positives. However, a flaw of the previously introduced tools is that multiple of them only check if a contract can be compromised in one transaction and disregard the possibility of chaining multiple transactions together. This is unrealistic, as nearly every smart contract will deal with multiple transactions in its lifetime.
 
-
-\subsubsection{Execution Traces and MAIAN}
-The resolution to this issue was addressed by Nikolic et al. in their paper introducing the MAIAN security analyzer. They introduce the term of trace vulnerabilities which are smart contract vulnerabilities caused by a potentially infinite sequence of invocations of the contracts functions. Using this term, they introduce three new classes of unsafe contracts: Greedy contracts, prodigal contracts, and suicidal contracts. They classify greedy contracts as contracts that lock their funds and cannot be destroyed (as destroying a contract returns the entrusted funds to a given address). Prodigal contracts are defined as contracts that give away funds to addresses that are not owners, previous interactors with the contract, or have any other direct relation to the contract. Finally, the paper describes suicidal contracts as contracts that allow an arbitrary/unintended address to command it to execute the SUICIDE instruction. All three of these classifications are based on errors behind previous large-scale Ethereum attacks. 
+\subsubsection{Execution Traces}
+The resolution to this issue was addressed by Nikolić in a paper introducing the MAIAN security analyzer \cite{nikolic_kolluri_sergey_saxena_hobor_2018}. They introduce the term of trace vulnerabilities, which are smart contract vulnerabilities caused by a potentially infinite sequence of invocations of the contracts functions (a contract's "trace"). Using this term, they introduce three new classes of unsafe contracts: Greedy contracts, prodigal contracts, and suicidal contracts. They classify greedy contracts as contracts that lock their funds and cannot be destroyed (as destroying a contract returns the entrusted funds to a given address). Prodigal contracts are defined as contracts that give away funds to addresses that are not owners, previous interactors with the contract, or have any other direct relation to the contract. Finally, the paper describes suicidal contracts as contracts that allow an arbitrary/unintended address to command it to execute the \verb|suicide| instruction\footnote{This instruction "destroys" the contract, making it unable to respond to transactions.}. All three of these classifications are based on errors behind previous large-scale Ethereum attacks. 
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.2]{MAIAN}
 \end{center}
-\caption{\label{fig:oyente} The MAIAN Tool's Structure}
+\caption{\label{fig:maian} The MAIAN Tool's Structure}
 \end{figure}
 
-The tool introduced, MAIAN, leverages a combination of static and dynamic analysis methods as described in the introduction: It takes the Ethereum Bytecode along with analysis specifications as inputs. The analysis specification provides information about the type of vulnerabilities to search for along with other parameters to control MAIAN. It then first performs symbolic analysis on the given bytecode, using the previously introduced OYENTE as a basic framework. Once it detects a problematic set of inputs, it saves these and attempts to validate the exploit on a private fork of the Ethereum Network before returning it to the user to lower the number of false positives. Additionally, this execution of the potential exploit on a private fork ensures the maintenance of the state of the public Ethereum Network.
+The tool introduced, MAIAN, leverages a combination of static and dynamic analysis methods as described in the introduction. It's structure is visualized in Figure~\ref{fig:maian} It takes the Ethereum Bytecode along with analysis specifications as inputs. The analysis specification provides information about the type of vulnerabilities to search for along with other parameters to control MAIAN. It then first performs symbolic analysis on the given bytecode, using an extension, which works with traces, of the previously introduced OYENTE as a basic framework. Once it detects a problematic set of inputs, it saves these and attempts to validate the exploit on a private fork of the Ethereum Network before returning it to the user to lower the number of false positives. Additionally, this execution of the potential exploit on a private fork ensures the maintenance of the state of the public Ethereum Network.
+
+A different approach to this issue is addressed by the tool Slither developed by Feist \cite{feist_grieco_groce_2019}, which uses taint analysis (Slither's full structure is depicted in Figure~\ref{fig:slither}). Slither functions by taking in the abstract syntax tree provided by the Solidity compiler rather than the EVM bytecode in order to preserve more information regarding the structure of the previous solidity code. Based on this extracted information, Slither converts the input to its internal representation, SlithIR, which, similar to ZEUS, is in the static single assignment (SSA) format. In the third step, Slither performs some general analyses using which can serve as a base for detecting various vulnerabilities (which can be extended by the user) in the final stage. To us, the data dependency detection is of particular interest, as Slither does this in two steps: First, Slither computes dependencies between all variables, as Securify does. Second, Slither uses taint analysis to mark variables which can be influenced by the user and could therefore be involved in a multi-transaction attack\footnote{It performs this taint analysis using function modifiers as an input as well, i.e. the dependency can be computed based on the user's privilege level, such as contract owner or regular user}. Additionally, the authors claim it to be significantly faster and more accurate than competing analyzers.
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.15]{Slither}
+\end{center}
+\caption{\label{fig:slither} The Slither Tool's Structure}
+\end{figure}
 
 
 \subsubsection{Graph Construction}
-In a paper by Chen, dynamic analysis of multiple smart contracts on the public Ethereum blockchain was conducted by creating three types of graphs, a Money Flow Graph, a Contract Creation Graph, and a Contract Invocation Graph. Using these three graphs, the authors were able to combat three security threats: 
+Lastly, all methodologies introduced until here either ignored interactions with external smart contracts or simulated them in an inaccurate way (e.g. by marking their input as tainted or symbolically analyzing their input's possible values). In a paper by Chen \cite{chen_zhu_li_chen_li_luo_lin_zhange_2018}, dynamic analysis of multiple smart contracts on the public Ethereum blockchain was conducted by creating three types of graphs, a Money Flow Graph, a Contract Creation Graph, and a Contract Invocation Graph. Using these three graphs, the authors were able to gain a better understanding of other smart contracts on the live Ethereum network. 
 
 \noindent First, given a malicious contract, the paper describes an algorithm using the Contract Creation Graph and Contract Invocation Graph to systematically detect all contracts and accounts under the control of the attacker. This methodology is useful in order to ensure that the contracts and addresses one's smart contract will interact with are not under the control of a bad actor.
 
-\noindent Second, using the Contract Creation Graph once more, the authors provide an approach to detecting abnormal contract creation patterns, which is can be an indicator for a DoS (Denial of Service) Attack or a plot to steal tokens from a different smart contract. As previously stated, information that can be useful to have prior to deploying one's contract.
-
-\noindent Finally, the authors also propose that the constructed graphs can be utilized for deanonymization techniques, however, this is more relevant to general Ethereum security rather than individual smart contracts.
-
-\subsubsection{Testing}
-The likely most prevalent strategy to prevent having security vulnerabilities in one's code is to write unit tests. These, however, can never detect every possible flaw, and, in the case of smart contracts generating every dangerous state manually is exceedingly difficult. For this reason, research has gone into both mutation testing and fuzzing. \linebreak
+\noindent Second, using the Contract Creation Graph once more, the authors provide an approach to detecting abnormal contract creation patterns, which is can be an indicator for a DoS (Denial of Service) Attack or a plot to steal tokens from a different smart contract. 
 
 
+\subsection{Testing}
+The likely most prevalent strategy to prevent having security vulnerabilities in one's code is to write unit tests. These, however, can never detect every possible flaw, and, in the case of smart contracts generating every dangerous state manually is exceedingly difficult. For this reason, research has gone into both mutation testing and fuzzing.
 
-{\noindent \bf Mutation Testing}
 
-\noindent For the case of Mutation Testing, the most significant paper is by Honig, where the authors introduce the Vertigo framework for mutation testing which runs on Truffle, a simulated Ethereum environment. This works by introducing the Solidity source code along with a working test suite to the framework. The framework then generates mutants (clones of the original contract with slight alterations in the source code) on which the test suite is run again, returning how many and which mutants passed the test suite.
+\subsubsection{Mutation Testing}
+
+\noindent For the case of Mutation Testing, a paper exploring this in the context of Ethereum is by Honig \cite{honig_everts_huisman_2019}. The authors introduce the Vertigo framework for mutation testing which runs on Truffle, a simulated Ethereum environment. This works by introducing the Solidity source code along with a working test suite to the framework. The framework then generates mutants (clones of the original contract with slight alterations in the source code) on which the test suite is run again, returning how many and which mutants passed the test suite. Based on this result, the efficacy of the test-suite can be evaluated, as described in Section~\ref{subsection:mut}.
 
 
 \begin{figure}
@@ -306,74 +310,28 @@ The likely most prevalent strategy to prevent having security vulnerabilities in
 
 
 
-{\noindent \bf Fuzzing}
+\subsubsection{Fuzzing}
 
-
-\noindent The most widespread automated fuzzing tool is called Echidna and is based on Grieco's 2020 paper and also supports Truffle as a testing environment. Echidna takes in the smart contract source code along with a set of properties to verify and builds directly on top of the previously discussed Slither in order to gain easy access to the contracts ABI and other potentially useful constants and functions. Then, similar to Haskell's QuickCheck, Echidna continuously generates random transactions conforming to the contracts ABI. If one or a combination of these violates one of the preset properties,  Echidna minimizes said example and outputs it to the user.
+An automated fuzzing tool for Ethereum is called Echidna and is based on Grieco's 2020 paper \cite{grieco_song_cygan_feist_groce_2020}. Its structure is displayed in Figure~\ref{fig:echidna}. Like Vertigo, it also supports Truffle as a testing environment. Echidna takes in the smart contract source code along with a set of properties to verify and builds directly on top of the previously discussed Slither in order to gain easy access to the contracts Application binary interface (ABI) and other potentially useful constants and functions. Then, similar to Haskell's QuickCheck \cite{claessen_hughes_2000}, Echidna continuously generates random transactions conforming to the contracts ABI, previous transactions, and constants defined in the contract. If one or a combination of these violates one of the preset properties, Echidna minimizes said example and outputs it to the user.
 
 \subsection{Other}
-Along with static and dynamic analysis approaches, the Ethereum ecosystem provides some other resources to aid in making smart contracts more secure: One of these is the Smart Contract Weakness Classification Registry based on EIP-1470, where one can find various examples and counterexamples to common smart contract security flaws. Another is the introduction of higher-level languages such as Obsidian or Vyper - These may not give one quite the same level of control over the EVM as Solidity does, however the greater abstraction also helps alleviate some of the flaws of Solidity like its long array of best practices concerning deprecated and dangerous operations that beginners may accidentally use.
+Along with static and dynamic analysis approaches, the Ethereum ecosystem provides some other resources to aid in making smart contracts more secure: One of these is the Smart Contract Weakness Classification Registry based on EIP-1470, where one can find various examples and counterexamples to common smart contract security flaws along with testing examples ~\cite{SWC}. Another is the introduction of higher-level languages such as Obsidian ~\cite{7965268} or Vyper ~\cite{9223278} - These may not give one quite the same level of control over the EVM as Solidity does, however the greater abstraction also helps alleviate some of the flaws of Solidity like its long array of best practices concerning deprecated and dangerous operations that beginners may accidentally use, as partially described in Section~\ref{subsection:sol}.
+
+\subsubsection{Code Metrics}
+Another less formal security analysis method is the use of code metrics. Code metrics play a significant role in the Quality Assurance process of many traditional software projects which target it is to minimize bugs and maximize code quality. These two goals go hand-in-hand with maximizing security, for which reason Péter Hegedűs developed SolMet ~\cite{hegedűs_2019}. SolMet is a static analysis tool that aims to collect the same data on solidity code as tools traditionally used in QA do. Examples for this data collected by SolMet range from simple metrics such as LOC (Lines of Code) to more complex metrics values like the McCC (McCabe’s cyclomatic complexity).
+
+\subsection{Comparison}
+Finally, we seek to compare the performance of the presented tools. The reason we seek to do this is because although these tools often mention their performance in their respective papers, many of them have been continuously maintained and improved, meaning the metrics mentioned are outdated. Additionally, this is of interest in order to determine which tool should be prioritized over another when applying them in the industry. The tools, along with the versions of the code we used, we will compare will be Slither\cite{slither}, OYENTE\cite{oyente}, Securify\cite{securify} and Mythril\cite{mythril}, as all of these have approximately the same goal of determining security faults. ZEUS and MAIAN, though comparable, had to be omitted, as ZEUS does not have a publicly accessible prototype and in spite of trying out multiple of MAIAN's implementation, the base was too outdated and we could not get it to run.
+Echidna and Vertigo are more focused on testing, which is not directly comparable. Chen's Graph Analysis is not comparable either. 
+
+
 
 %-------------------------------------------------------------------------------
 \section{Summary}
 %-------------------------------------------------------------------------------
 
 %-------------------------------------------------------------------------------
-\section{References}
-%-------------------------------------------------------------------------------
-https://www4.comp.polyu.edu.hk/~csxluo/Gasper.pdf
-\linebreak
-\linebreak
-https://www.mdpi.com/2227-7080/7/1/6/htm
-\linebreak
-\linebreak
-https://loiluu.com/papers/oyente.pdf
-\linebreak
-\linebreak
-https://drops.dagstuhl.de/opus/volltexte/2020/13015/pdf/OASIcs-SLATE-2020-2.pdf
-\linebreak
-\linebreak
-\verb|http://pages.cpsc.ucalgary.ca/~joel.reardon/blockchain/readings/ndss2018_09-1_Kalra_paper.pdf|
-\linebreak
-\linebreak
-https://arxiv.org/pdf/1806.01143.pdf
-\linebreak
-\linebreak
-https://github.com/federicobond/solcheck
-\linebreak
-\linebreak
-https://github.com/SilentCicero/solint
-\linebreak
-\linebreak
-https://www.mdpi.com/2227-7080/7/1/6/htm
-\linebreak
-\linebreak
-https://hal.inria.fr/hal-01400469/document
-\linebreak
-\linebreak
-\verb|https://ts.data61.csiro.au/publications/csiro_full_text/Amani_BBS_18.pdf|
-\linebreak
-\linebreak
-https://dl.acm.org/doi/pdf/10.1145/3381036
-\linebreak
-\linebreak
-https://link.springer.com/content/pdf/10.1007%2F978-3-030-31500-9_19.pdf
-\linebreak
-\linebreak
-https://arxiv.org/pdf/1908.09878.pdf
-\linebreak
-\linebreak
-https://arxiv.org/pdf/1807.03932.pdf
-\linebreak
+\bibliography{0-Paper} 
+\bibliographystyle{ieeetr}
 
-
-%-------------------------------------------------------------------------------
-\bibliographystyle{plain}
-\bibliography{\jobname}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%  LocalWords:  endnotes includegraphics fread ptr nobj noindent
-%%  LocalWords:  pdflatex acks

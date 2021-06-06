@@ -1,0 +1,70 @@
+This is BibTeX, Version 0.99d (TeX Live 2020/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: 0-Paper.aux
+The style file: ieeetr.bst
+Database file #1: 0-Paper.bib
+Warning--empty journal in nakamoto
+Warning--empty year in nakamoto
+Warning--empty author in nr1
+Warning--empty journal in nr1
+Warning--empty author in nr2
+Warning--empty journal in nr2
+Warning--empty author in nr1T
+Warning--empty journal in nr1T
+Warning--empty author in nr2T
+Warning--empty journal in nr2T
+Warning--empty journal in atzei_bartoletti_cimoli_2017
+Warning--empty journal in wood_2021
+Warning--empty journal in gebele_2020
+Warning--empty year in ethereumrevision0bbfe453
+Warning--empty journal in mueller
+Warning--empty year in mueller
+Warning--empty year in lattner_adve
+Warning--empty author in SWC
+Warning--empty journal in SWC
+Warning--empty year in slither
+Warning--empty year in oyente
+Warning--empty year in securify
+Warning--empty year in mythril
+You've used 42 entries,
+            1876 wiz_defined-function locations,
+            671 strings with 11656 characters,
+and the built_in function-call counts, 8658 in all, are:
+= -- 724
+> -- 432
+< -- 0
++ -- 164
+- -- 122
+* -- 573
+:= -- 1265
+add.period$ -- 40
+call.type$ -- 42
+change.case$ -- 42
+chr.to.int$ -- 0
+cite$ -- 65
+duplicate$ -- 552
+empty$ -- 852
+format.name$ -- 122
+if$ -- 2083
+int.to.chr$ -- 0
+int.to.str$ -- 42
+missing$ -- 42
+newline$ -- 129
+num.names$ -- 37
+pop$ -- 213
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 291
+stack$ -- 0
+substring$ -- 188
+swap$ -- 186
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 23
+while$ -- 51
+width$ -- 44
+write$ -- 333
+(There were 23 warnings)
