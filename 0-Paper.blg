@@ -22,49 +22,51 @@ Warning--empty year in mueller
 Warning--empty year in lattner_adve
 Warning--empty author in SWC
 Warning--empty journal in SWC
-Warning--empty year in slither
+Warning--empty year in Slither
 Warning--empty year in oyente
 Warning--empty year in securify
 Warning--empty year in mythril
-You've used 42 entries,
+Warning--empty author in data
+Warning--empty year in data
+You've used 45 entries,
             1876 wiz_defined-function locations,
-            671 strings with 11656 characters,
-and the built_in function-call counts, 8658 in all, are:
-= -- 724
-> -- 432
+            681 strings with 12010 characters,
+and the built_in function-call counts, 9116 in all, are:
+= -- 755
+> -- 458
 < -- 0
-+ -- 164
-- -- 122
-* -- 573
-:= -- 1265
-add.period$ -- 40
-call.type$ -- 42
-change.case$ -- 42
++ -- 174
+- -- 129
+* -- 605
+:= -- 1327
+add.period$ -- 43
+call.type$ -- 45
+change.case$ -- 45
 chr.to.int$ -- 0
-cite$ -- 65
-duplicate$ -- 552
-empty$ -- 852
-format.name$ -- 122
-if$ -- 2083
+cite$ -- 70
+duplicate$ -- 573
+empty$ -- 912
+format.name$ -- 129
+if$ -- 2194
 int.to.chr$ -- 0
-int.to.str$ -- 42
-missing$ -- 42
-newline$ -- 129
-num.names$ -- 37
-pop$ -- 213
+int.to.str$ -- 45
+missing$ -- 43
+newline$ -- 138
+num.names$ -- 39
+pop$ -- 237
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 291
+skip$ -- 301
 stack$ -- 0
 substring$ -- 188
-swap$ -- 186
+swap$ -- 187
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 23
-while$ -- 51
-width$ -- 44
-write$ -- 333
-(There were 23 warnings)
+warning$ -- 25
+while$ -- 53
+width$ -- 47
+write$ -- 353
+(There were 25 warnings)

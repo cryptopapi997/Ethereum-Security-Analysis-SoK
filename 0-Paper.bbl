@@ -172,7 +172,7 @@ M.~Kaleem, A.~Mavridou, and A.~Laszka, ``Vyper: A security comparison with
 P.~Hegedűs, ``Towards analyzing the complexity landscape of solidity based
   ethereum smart contracts,'' {\em Technologies}, vol.~7, no.~1, p.~6, 2019.
 
-\bibitem{slither}
+\bibitem{Slither}
 Commit-4b55839, ``Slither source,'' in {\em https://github.com/crytic/slither}.
 
 \bibitem{oyente}
@@ -186,5 +186,17 @@ Commit-71c22dd, ``Securify2 source,'' in {\em
 \bibitem{mythril}
 Commmit-9b0c6d1, ``Mythril source,'' in {\em
   https://github.com/ConsenSys/mythril}.
+
+\bibitem{data}
+``Contract dataset,'' in {\em
+  https://github.com/eth-sri/securify2/tree/master/tests/solidity/test_real_contracts}.
+
+\bibitem{flash1}
+Y.~Cao, C.~Zou, and X.~Cheng, ``Flashot: A snapshot of flash loan attack on
+  defi ecosystem,'' 2021.
+
+\bibitem{flash2}
+K.~Qin, L.~Zhou, B.~Livshits, and A.~Gervais, ``Attacking the defi ecosystem
+  with flash loans for fun and profit,'' 2021.
 
 \end{thebibliography}
