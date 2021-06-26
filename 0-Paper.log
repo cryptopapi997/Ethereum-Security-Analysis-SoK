@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.1.17)  6 JUN 2021 23:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.1.17)  26 JUN 2021 08:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -893,11 +893,12 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
+[2]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 7
 7.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [2]
+)
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -913,155 +914,178 @@ Underfull \hbox (badness 1048) in paragraph at lines 89--90
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 89--90
-\T1/ptm/m/n/10 (+20) fect to re-ceiv-ing Ether, this func-tion is also ex-e-
+Underfull \hbox (badness 1057) in paragraph at lines 89--90
+\T1/ptm/m/n/10 (+20) tion call [][][][][]. Aside from be-ing ex-e-cuted as a si
+de
  []
 
 [3] [4]
 <oyente.png, id=196, 705.63625pt x 302.12875pt>
 File: oyente.png Graphic file (type png)
 <use oyente.png>
-Package pdftex.def Info: oyente.png  used on input line 202.
+Package pdftex.def Info: oyente.png  used on input line 203.
 (pdftex.def)             Requested size: 246.97638pt x 105.74664pt.
 
-Overfull \hbox (5.956pt too wide) in paragraph at lines 202--203
+Overfull \hbox (5.956pt too wide) in paragraph at lines 203--204
  [] 
  []
 
-[5 <./oyente.png (PNG copy)>]
-<Fstar.png, id=227, 1115.16624pt x 705.63625pt>
+[5 <./oyente.png (PNG copy)>] [6]
+<Fstar.png, id=249, 1115.16624pt x 705.63625pt>
 File: Fstar.png Graphic file (type png)
 <use Fstar.png>
-Package pdftex.def Info: Fstar.png  used on input line 252.
+Package pdftex.def Info: Fstar.png  used on input line 253.
 (pdftex.def)             Requested size: 223.0293pt x 141.12474pt.
-
-Underfull \vbox (badness 6708) has occurred while \output is active []
-
-[6]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-<MAIAN.png, id=256, 1154.3125pt x 476.78125pt>
+<MAIAN.png, id=257, 1154.3125pt x 476.78125pt>
 File: MAIAN.png Graphic file (type png)
 <use MAIAN.png>
-Package pdftex.def Info: MAIAN.png  used on input line 275.
+Package pdftex.def Info: MAIAN.png  used on input line 276.
 (pdftex.def)             Requested size: 230.85841pt x 95.35455pt.
 [7 <./Fstar.png (PNG copy)>]
-<Slither.png, id=274, 1451.4225pt x 466.74374pt>
+<Slither.png, id=275, 1451.4225pt x 466.74374pt>
 File: Slither.png Graphic file (type png)
 <use Slither.png>
-Package pdftex.def Info: Slither.png  used on input line 286.
+Package pdftex.def Info: Slither.png  used on input line 287.
 (pdftex.def)             Requested size: 217.70398pt x 70.00853pt.
-<echidna.png, id=282, 1467.4825pt x 386.44376pt>
+
+Underfull \vbox (badness 7273) has occurred while \output is active []
+
+<echidna.png, id=283, 1467.4825pt x 386.44376pt>
 File: echidna.png Graphic file (type png)
 <use echidna.png>
-Package pdftex.def Info: echidna.png  used on input line 314.
+Package pdftex.def Info: echidna.png  used on input line 315.
 (pdftex.def)             Requested size: 234.802pt x 61.83226pt.
 [8 <./MAIAN.png (PNG copy)> <./slither.png (PNG copy)>]
-Overfull \hbox (12.02586pt too wide) in paragraph at lines 363--364
+Overfull \hbox (12.02586pt too wide) in paragraph at lines 364--365
  [][] 
  []
 
 [9 <./Echidna.png (PNG copy)>] (./0-Paper.bbl
-Underfull \hbox (badness 1281) in paragraph at lines 73--77
+Underfull \hbox (badness 2368) in paragraph at lines 4--6
+[]\T1/ptm/m/n/10 (+20) S. Nakamoto, ``Bit-coin: A peer-to-peer elec-tronic
+ []
+
+
+Underfull \hbox (badness 3679) in paragraph at lines 27--30
+[]\T1/ptm/m/n/10 (+20) ``Nr 1 con-tract by bal-ance,''  Bal-ance can be
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--30
+\T1/ptm/m/n/10 (+20) viewed at [][]$\T1/pcr/m/n/10 https : / / etherscan . io /
+ address /
+ []
+
+
+Underfull \hbox (badness 3679) in paragraph at lines 32--35
+[]\T1/ptm/m/n/10 (+20) ``Nr 2 con-tract by bal-ance,''  Bal-ance can be
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--35
+\T1/ptm/m/n/10 (+20) viewed at [][]$\T1/pcr/m/n/10 https : / / etherscan . io /
+ address /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--40
+[]\T1/ptm/m/n/10 (+20) ``Uniswap con-tract,''  Bal-ance can be
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--40
+\T1/ptm/m/n/10 (+20) viewed at [][]$\T1/pcr/m/n/10 https : / / etherscan . io /
+ address /
+ []
+
+
+Underfull \hbox (badness 5711) in paragraph at lines 42--45
+[]\T1/ptm/m/n/10 (+20) ``Chainlink con-tract,'' 2021.  Bal-ance can be
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--45
+\T1/ptm/m/n/10 (+20) viewed at [][]$\T1/pcr/m/n/10 https : / / etherscan . io /
+ address /
+ []
+
+
+Underfull \hbox (badness 1281) in paragraph at lines 82--86
 []\T1/ptm/m/n/10 (+20) E. Al-bert, P. Gordillo, B. Livshits, A. Ru-bio, and
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
+Underfull \hbox (badness 1742) in paragraph at lines 93--96
+\T1/ptm/m/n/10 (+20) real profit,''  Avail-able at [][]$\T1/pcr/m/n/10 https : 
+/ / github . com /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--96
+\T1/pcr/m/n/10 b-[]mueller / smashing-[]smart-[]contracts / blob /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--190
 []\T1/ptm/m/n/10 (+20) Commit-4b55839, ``Slither source,'' in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--181
+Underfull \hbox (badness 10000) in paragraph at lines 192--194
 []\T1/ptm/m/n/10 (+20) Commit-69dc0a9, ``Oyente source,'' in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--185
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
 []\T1/ptm/m/n/10 (+20) Commit-71c22dd, ``Se-cu-rify2 source,'' in
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 187--189
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
 []\T1/ptm/m/n/10 (+20) Commmit-9b0c6d1, ``Mythril source,'' in
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.192 ...ecurify2/tree/master/tests/solidity/test_
-                                                  real_contracts}.
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-! Extra }, or forgotten $.
-l.192 ...aster/tests/solidity/test_real_contracts}
-                                                  .
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.193 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.193 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 191--193
-[]\T1/ptm/m/n/10 (+20) ``Contract dataset,'' in \T1/ptm/m/it/10 (+20) https://g
-ithub.com/eth-
+Underfull \hbox (badness 10000) in paragraph at lines 204--206
+[]\T1/ptm/m/n/10 (+20) ``Contract dataset,'' in
  []
 
 
-Overfull \hbox (0.74316pt too wide) in paragraph at lines 191--193
-\T1/ptm/m/it/10 (-20) sri/securify2/tree/master/tests/solidity/test$[]\OML/ptmc
-m/m/it/10 eal[]ontracts:[]$ 
+Overfull \hbox (204.6375pt too wide) in paragraph at lines 204--206
+[][]\T1/pcr/m/n/10 https://github.com/eth-sri/securify2/tree/master/tests/solid
+ity/test_real_contracts[]\T1/ptm/m/n/10 (-20) . 
  []
 
-) [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 381.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 381.
+) [12
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 382.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 382.
 (./0-Paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 381.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 381.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 382.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 382.
 Package rerunfilecheck Info: File `0-Paper.out' has not changed.
-(rerunfilecheck)             Checksum: 5F7809817E1CC18ED544AB7434B3B363;1926.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 381.
+(rerunfilecheck)             Checksum: 9CFF9D6DE174A291496B4B05DABCAD26;1955.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 382.
  ) 
 Here is how much of TeX's memory you used:
- 29355 strings out of 480906
- 703434 string characters out of 5910772
- 1112586 words of memory out of 5000000
- 44045 multiletter control sequences out of 15000+600000
- 606374 words of font info for 278 fonts, out of 8000000 for 9000
+ 29358 strings out of 480906
+ 703475 string characters out of 5910772
+ 1108585 words of memory out of 5000000
+ 44046 multiletter control sequences out of 15000+600000
+ 605009 words of font info for 278 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,12n,100p,2610b,2385s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,12n,100p,2635b,2385s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 0-Paper.pdf (11 pages, 787889 bytes).
+Output written on 0-Paper.pdf (12 pages, 792226 bytes).
 PDF statistics:
- 388 PDF objects out of 1000 (max. 8388607)
- 360 compressed objects within 4 object streams
- 117 named destinations out of 1000 (max. 500000)
+ 408 PDF objects out of 1000 (max. 8388607)
+ 379 compressed objects within 4 object streams
+ 118 named destinations out of 1000 (max. 500000)
  43270 words of extra memory for PDF output out of 51595 (max. 10000000)
 

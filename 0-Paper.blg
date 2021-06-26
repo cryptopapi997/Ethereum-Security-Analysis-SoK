@@ -7,10 +7,13 @@ Warning--empty journal in nakamoto
 Warning--empty year in nakamoto
 Warning--empty author in nr1
 Warning--empty journal in nr1
+Warning--empty year in nr1
 Warning--empty author in nr2
 Warning--empty journal in nr2
+Warning--empty year in nr2
 Warning--empty author in nr1T
 Warning--empty journal in nr1T
+Warning--empty year in nr1T
 Warning--empty author in nr2T
 Warning--empty journal in nr2T
 Warning--empty journal in atzei_bartoletti_cimoli_2017
@@ -30,34 +33,34 @@ Warning--empty author in data
 Warning--empty year in data
 You've used 45 entries,
             1876 wiz_defined-function locations,
-            681 strings with 12010 characters,
-and the built_in function-call counts, 9116 in all, are:
-= -- 755
+            682 strings with 12290 characters,
+and the built_in function-call counts, 9202 in all, are:
+= -- 780
 > -- 458
 < -- 0
 + -- 174
 - -- 129
-* -- 605
-:= -- 1327
-add.period$ -- 43
+* -- 611
+:= -- 1335
+add.period$ -- 47
 call.type$ -- 45
 change.case$ -- 45
 chr.to.int$ -- 0
-cite$ -- 70
+cite$ -- 73
 duplicate$ -- 573
 empty$ -- 912
 format.name$ -- 129
-if$ -- 2194
+if$ -- 2219
 int.to.chr$ -- 0
 int.to.str$ -- 45
 missing$ -- 43
-newline$ -- 138
+newline$ -- 145
 num.names$ -- 39
-pop$ -- 237
+pop$ -- 233
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 301
+skip$ -- 299
 stack$ -- 0
 substring$ -- 188
 swap$ -- 187
@@ -65,8 +68,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 25
+warning$ -- 28
 while$ -- 53
 width$ -- 47
-write$ -- 353
-(There were 25 warnings)
+write$ -- 364
+(There were 28 warnings)
