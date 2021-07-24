@@ -1,0 +1,24 @@
+Title: Software Security Analysis of Ethereum Smart Contracts
+Author: Nicolas Schapeler
+--- Summary ---
+The paper introduces software security analysis tools for the programming lanugage Solidity which
+is used to write smart contracts for the Ethereum protocol.
+A brief overview over Ethereum and common errors in Solidity is given. Different approaches to
+the security analysis are then introduced which are seperated into static, dynamic and testing
+approaches.
+Four of the introduced approaches are lastly compared based on their execution speed in regard to
+the number of checked vulnerabilities.
+The paper is well structured and written. It is easy to understand even without knowledge about the
+topic.
+--- Notes ---
+1) Throughout the paper, only the last name of one author is used to refer to a paper, although it was
+written by multiple authors. As far as I know, „et al.“ should be added after the last name of the first
+author.
+2) For Reference Nr. 6-9 and Nr. 20 there is some information missing. Reference 43 also has some
+problems regarding the website address.
+3) In my opinion, some information written in the footnotes could be put into the main text.
+4) The introduction of abbreviations is somewhat inconsistent. DoS as a abbreviation for Denial of
+Service for example is not officially introduced until Section 3.2.2 but is used in eariler sections.
+Some abbreviations are also introduced although the term is only used once in the paper.
+5) One citiation is broken in each Section 3.1.2, 3.1.3 and 3.4.1.
+6) There are some periods missing, especially after footnotes.

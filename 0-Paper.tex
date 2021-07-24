@@ -100,24 +100,18 @@ contract Bank{
   mapping (address => uint) balances;
 
   function withdraw(uint _val) public {
-    // msg.sender is the account that
-    // made the function call
-    address a = msg.sender;
-    // Check sufficient balance
-    if(balances[a] >= _val) {
-      // Send the money
-      // and check the send succeeded
-      require(a.call.value(_val).gas());
-      // Remove sent money from balance
-      balances[msg.sender] -= _val;
+
+      if(balances[msg.sender] >= _val) {
+
+          require(a.call.value(_val).gas());
+
+	      balances[msg.sender] -= _val;
       }
    }
 }
 
 contract Attacker{
-  // Fallback function,
-  // executed when receiving money
-  function() payable {
+  fallback() external payable {
     // Call Bank.withdraw again
   }
 }
